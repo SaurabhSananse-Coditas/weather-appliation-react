@@ -21,7 +21,7 @@ const WeatherDetails = () => {
   const convertToCelsius = (kelvin: number) => parseInt(String(kelvin - 273.15));
 
   // State to control whether to show next weather cards
-  const [showNextWeatherCards, setShowNextWeatherCards] = useState(false);
+  const [showNextWeatherCards, setShowNextWeatherCards] = useState<boolean>(false);
 
   // Function to get an array of week days starting from the current day
  

@@ -9,7 +9,7 @@ import EnvironmentalHealthInfo from "../../customComponents/EnvironmentalHealthI
 // Define a functional component called WeatherExtras
 const WeatherExtras = () => {
     // State to control the expansion of the search input
-    const [isExpand, setIsExpand] = useState(false);
+    const [isExpand, setIsExpand] = useState<boolean>(false);
 
     // Get weather data from the context
     const weatherContext: {
@@ -40,7 +40,6 @@ const WeatherExtras = () => {
                 })
                 .then((data) => {
                     // Extracted location data from the response
-                    console.log(data);
                     weatherContext.setData(data);
                 })
                 .catch((error) => {
