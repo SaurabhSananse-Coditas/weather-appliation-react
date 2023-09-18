@@ -1,0 +1,169 @@
+.extrasMain {
+    border: 0.5px solid #FFF;
+    background: radial-gradient(
+      107.32% 141.42% at 0% 0%,
+      #d4c1e7 0%,
+      #8C6BAE 100%
+    );
+    box-shadow: -5px -5px 250px 0px rgba(255, 255, 255, 0.02) inset;
+    backdrop-filter: blur(21px);
+    padding: 2rem 3rem 0rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  
+    &__header {
+      width: 100%;
+      display: flex;
+      column-gap: 15.75rem;
+      align-items: center;
+  
+      .location {
+        display: flex;
+        gap: 1rem;
+  
+        &__icon {
+          width: 35px;
+          height: 35px;
+          flex-shrink: 0;
+        }
+  
+        &__text {
+          width: fit-content;
+          color: #FFF;
+          text-shadow: -1.5099999904632568px 2.259999990463257px 0.75px rgba(0, 0, 0, 0.10);
+          font-family: Inter;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 120%;
+        }
+      }
+    }
+  
+    &__search {
+      input.searchInput {
+        width: 16px;
+        height: 2rem;
+        background: linear-gradient(117deg, rgba(255, 255, 255, 0.48) -41.94%, rgba(255, 255, 255, 0.12) 57.51%);
+        stroke-width: 3px;
+        stroke: #FFF;
+        backdrop-filter: blur(50px);
+        border-radius: 1rem;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+  
+        &-wide {
+          width: 500px;
+          -webkit-transition: width 0.4s ease-out;
+          transition: width 0.4s ease-out;
+        }
+  
+        &:focus,
+        &:active {
+          outline: none;
+        }
+      }
+  
+      .searchLogo {
+        position: absolute;
+        top: 42px;
+        right: 58px;
+        cursor: pointer;
+      }
+    }
+  
+    &__timeSection {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+  
+      .timeCardDiv {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+  
+        .timeSection__label {
+          color: #FFF;
+          text-shadow: -1.5099999904632568px 2.259999990463257px 0.75px rgba(0, 0, 0, 0.10);
+          font-family: Inter;
+          font-size: 28px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 120%;
+        }
+  
+        .smallCard {
+          margin-top: 3.5rem;
+        }
+  
+        .smallTimeCard {
+          width: 105px;
+          height: 210px;
+          flex-shrink: 0;
+        }
+  
+        .largeTimeCard {
+          width: 130px;
+          height: 245px;
+          flex-shrink: 0;
+        }
+      }
+    }
+  
+    &__infoSection {
+      color: #FFF;
+      font-family: Inter;
+      font-size: 24px;
+      font-style: italic;
+      font-weight: 600;
+      line-height: 120%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+  
+      .dividingLine {
+        width: 100%;
+        border-top: 0.5px solid #FFF;
+        height: 0;
+      }
+  
+      .infoIcon {
+        background-color: rgba(255, 255, 255, 0.23);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+      }
+    }
+  
+    &__indexSection {
+      display: flex;
+      justify-content: space-around;
+  
+      .indexEle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+  
+        .indexName {
+          color: #FFF;
+          text-shadow: -1.5099999904632568px 2.259999990463257px 0.75px rgba(0, 0, 0, 0.10);
+          font-family: Inter;
+          font-size: 28px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 120%;
+        }
+      }
+    }
+  }
+  

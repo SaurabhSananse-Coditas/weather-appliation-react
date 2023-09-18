@@ -1,0 +1,36 @@
+.index-div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.index-div__reading {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    position: absolute;
+    top: 46px;
+    left: 41px;
+}
+
+.index-div__value {
+    color: #FFF;
+    text-align: center;
+    text-shadow: -1.5099999904632568px 2.259999990463257px 0.75px rgba(0, 0, 0, 0.10);
+    font-family: Inter;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+}
+
+.index-div__state {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+}

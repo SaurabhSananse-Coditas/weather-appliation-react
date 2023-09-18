@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
+
+.weather-card {
+  background: linear-gradient(249deg, #8C6BAE 0%, #F0B5CE 100%);
+  color: #ffff;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.weather-card__temperature {
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: 143.23px;
+    height: 100px;
+  }
+
+  .weather-card__temp-reading {
+    display: flex;
+    margin-top: -16px;
+
+    .weather-card__temp-text {
+      font-family: Inter;
+      font-size: 164px;
+      font-style: normal;
+      font-weight: 100;
+      line-height: 120%;
+    }
+
+    .weather-card__temp-deg {
+      margin-top: 10px;
+      font-family: Inter;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: -1.6px;
+    }
+  }
+}
+
+.weather-card__date {
+  color: #FFF;
+  text-shadow: -1.5099999904632568px 2.259999990463257px 0.75px rgba(0, 0, 0, 0.10);
+  font-family: Inter;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+}
+
+.weather-card__day-time {
+  display: flex;
+  color: #FFF;
+  text-shadow: -1.5099999904632568px 2.259999990463257px 0.75px rgba(0, 0, 0, 0.10);
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  margin-top: 1rem;
+
+  .weather-card__day {
+    margin-right: 1.5rem;
+  }
+
+  .weather-card__time {
+    padding-left: 1.5rem;
+    border-left: 1px solid #FFF;
+  }
+}
+
+.weather-card__extra-info {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2.5rem;
+  color: #FFF;
+  text-shadow: -1.3983862400054932px 2.09757924079895px 0.6991931200027466px rgba(0, 0, 0, 0.10);
+  font-family: Overpass;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  gap: 3rem;
+
+  .weather-card__info-item {
+    display: flex;
+    gap: 1.5rem;
+
+    img {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+  }
+
+  .weather-card__info-item--humidity,
+  .weather-card__info-item--rain {
+    border-left: 1px solid #FFF;
+    padding-left: 3rem;
+  }
+}
+
+.weather-card__daily-weather {
+  margin-top: 3rem;
+  display: flex;
+  gap: 3.6rem;
+
+  .weather-card__next-btn {
+    cursor: pointer;
+  }
+}
+
+.weather-card__units {
+  position: absolute;
+  top: 63px;
+  left: 50%;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.16);
+  width: 5rem;
+  height: 2.5rem;
+  display: flex;
+
+  .weather-card__unit {
+    width: 50%;
+    height: 100%;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .weather-card__unit--selected {
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.18);
+  }
+}
