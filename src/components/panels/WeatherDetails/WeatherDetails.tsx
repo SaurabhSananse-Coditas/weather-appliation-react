@@ -23,9 +23,6 @@ const WeatherDetails = () => {
   // State to control whether to show next weather cards
   const [showNextWeatherCards, setShowNextWeatherCards] = useState<boolean>(false);
 
-  // Function to get an array of week days starting from the current day
- 
-
   // Function to display default weather cards
   function showDefaultCards() {
     return getWeekDaysFromCurrentDay([], 7, new Date().getDay() + 1, 4).map((day: string,index : number) => {
@@ -42,15 +39,24 @@ const WeatherDetails = () => {
 
   // Function to display next weather cards
   function showNextCards() {
-    let today = new Date().getDay(); 
+    // Get the current day index (0 for Sunday, 1 for Monday, etc.).
+    let today = new Date().getDay();
+  
+    // Check if adding 4 days exceeds the current week (Saturday).
     if (today + 4 >= 6) {
+      // Calculate the number of days that exceed the current week.
       const diff = (today + 4) - 6;
+  
+      // Update the 'today' index to the first day of the next week.
       today = diff - 1;
     }
-    return getWeekDaysFromCurrentDay([], 4, today + 1, 3).map((day: string,index:number) => {
+  
+    // Generate an array of next 4 days' names using getWeekDaysFromCurrentDay function.
+    return getWeekDaysFromCurrentDay([], 4, today + 1, 3).map((day: string, index: number) => {
       return (
+        // Return a WeatherDetailsCard component for each day.
         <WeatherDetailsCard
-          key = {index}
+          key={index}
           day={day}
           ferenheitSelected={ferenheitSelected}
           temp={ferenheitSelected ? convertToFahrenheit(weatherData?.main?.temp) : convertToCelsius(weatherData?.main?.temp)}
@@ -58,10 +64,8 @@ const WeatherDetails = () => {
       );
     });
   }
-
   return (
     <>
-
   <section>
     {/* Thematic content goes here */}
     <div className="weather-card">
