@@ -13,7 +13,7 @@ const SunCycleDetails: React.FC<{ className: string; showLargeSizeWidget: boolea
         // The main container div for the time card, with a class determined by the 'className' prop
         <div className={`time-card ${className}`}>
             {/* Icon for displaying time */}
-            <img className="time-card__icon" src="/src/assets/icons/clock-hands.svg" alt="" />
+            <img className="time-card__icon" src="/src/assets/icons/clock-hands.svg" alt="clock" />
             
             <div className="time-card__text">
                 {/* Conditional rendering based on the 'sunSetOrsunRise' prop */}

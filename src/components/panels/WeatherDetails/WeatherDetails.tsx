@@ -4,28 +4,27 @@ import { useContext, useState } from "react";
 import { weatherContextData } from "../../../App";
 import { weatherInfo } from "../../../types/component.types";
 import {getWeekDaysFromCurrentDay} from '../../../utils/utils'
-
 const WeatherDetails = () => {
-
+ const date = new Date()
   // State to toggle between Fahrenheit and Celsius
   const [ferenheitSelected, setUnit] = useState<boolean>(true);
-  
+
   // Get weather data from the context
   const weatherContext = useContext<weatherInfo>(weatherContextData);
   const weatherData = weatherContext.weatherData;
 
   // Functions to convert temperature units
   const convertToFahrenheit = (kelvin: number) =>
-    parseInt(String((kelvin - 273.15) * (9 / 5) + 32));
+    ((kelvin - 273.15) * (9 / 5) + 32).toFixed(2);
 
-  const convertToCelsius = (kelvin: number) => parseInt(String(kelvin - 273.15));
+  const convertToCelsius = (kelvin: number) => (kelvin - 273.15).toFixed(2);
 
   // State to control whether to show next weather cards
   const [showNextWeatherCards, setShowNextWeatherCards] = useState<boolean>(false);
 
   // Function to display default weather cards
-  function showDefaultCards() {
-    return getWeekDaysFromCurrentDay([], 7, new Date().getDay() + 1, 4).map((day: string,index : number) => {
+  const showDefaultCards = ()=> {
+    return getWeekDaysFromCurrentDay([], 7, date.getDay() + 1, 4).map((day: string,index : number) => {
       return (
         <WeatherDetailsCard
           key = {index}
@@ -38,9 +37,9 @@ const WeatherDetails = () => {
   }
 
   // Function to display next weather cards
-  function showNextCards() {
+  const  showNextCards = ()=> {
     // Get the current day index (0 for Sunday, 1 for Monday, etc.).
-    let today = new Date().getDay();
+    let today = date.getDay();
   
     // Check if adding 4 days exceeds the current week (Saturday).
     if (today + 4 >= 6) {
@@ -83,21 +82,21 @@ const WeatherDetails = () => {
       </div>
       {/* Date and time */}
       <time className="weather-card__date">
-        {new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: '2-digit' })}
+        {date.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: '2-digit' })}
       </time>
       <div className="weather-card__day-time">
         <span className="weather-card__day">
-          {new Date().toLocaleDateString(undefined, { weekday: 'long' })}
+          {date.toLocaleDateString(undefined, { weekday: 'long' })}
         </span>
         <span className="weather-card__time">
-          {new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}
+          {date.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}
         </span>
-      </div>
+      </div> 
       {/* Extra weather information */}
       <section className="weather-card__extra-info">
         {/* Wind information */}
         <div className="weather-card__info-item">
-          <img src="/src/assets/icons/wind-direction-icon.svg" alt="" />
+          <img src="/src/assets/icons/wind-direction-icon.svg" alt="wind indicator image" />
           <span className="weather-card__info-label">Wind</span>
           {/* wind in km/hr */}
           <span className="weather-card__info-value">
@@ -106,7 +105,7 @@ const WeatherDetails = () => {
         </div>
         {/* Humidity information */}
         <div className="weather-card__info-item weather-card__info-item--humidity">
-          <img src="/src/assets/icons/hum.svg" alt="" />
+          <img src="/src/assets/icons/hum.svg" alt="humidity indicator image" />
           <span className="weather-card__info-label">Hum</span>
           <span className="weather-card__info-value">
             {weatherData?.main?.humidity} %
@@ -114,7 +113,7 @@ const WeatherDetails = () => {
         </div>
         {/* Rain information */}
         <div className="weather-card__info-item weather-card__info-item--rain">
-          <img src="/src/assets/icons/Group 656.svg" alt="" />
+          <img src="/src/assets/icons/Group 656.svg" alt="rain indicator image" />
           <span className="weather-card__info-label">Rain</span>
           {/* "NA" if not rain info is available */}
           <span className="weather-card__info-value">

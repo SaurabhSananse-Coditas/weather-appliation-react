@@ -7,7 +7,7 @@ const EnvironmentalHealthInfo = () => {
         // The main container div for the component
         <div className="index-div">
             {/* Icon image */}
-            <img className="index-div__icon" src="/src/assets/icons/index frame.svg" alt="" />
+            <img className="index-div__icon" src="/src/assets/icons/index frame.svg" alt="enviroment info" />
 
             {/* Reading information */}
             <div className="index-div__reading">

@@ -10,7 +10,6 @@ import EnvironmentalHealthInfo from "../../customComponents/EnvironmentalHealthI
 const WeatherExtras = () => {
     // State to control the expansion of the search input
     const [isExpand, setIsExpand] = useState<boolean>(false);
-
     // Get weather data from the context
     const weatherContext: {
         weatherData: weatherInfo;
@@ -58,7 +57,7 @@ const WeatherExtras = () => {
             <div className="extrasMain__location location">
               <img
                 src="/src/assets/icons/location.svg"
-                alt=""
+                alt="location"
                 className="location__icon"
               />
               <span className="location__text">
@@ -81,7 +80,7 @@ const WeatherExtras = () => {
             {/* Search button */}
             <img
               src="/src/assets/icons/search (2).svg"
-              alt=""
+              alt="search icon"
               className="searchLogo"
               onClick={() => expandSearch()}
             />

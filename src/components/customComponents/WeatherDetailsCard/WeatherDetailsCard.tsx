@@ -2,7 +2,7 @@
 import "./WeatherDetailsCard.styles.scss";
 
 // Define a functional component called WeatherDetailsCard
-const WeatherDetailsCard: React.FC<{ day: string; temp: number; ferenheitSelected: boolean }> = ({ day, temp, ferenheitSelected }) => {
+const WeatherDetailsCard: React.FC<{ day: string; temp: string; ferenheitSelected: boolean }> = ({ day, temp, ferenheitSelected }) => {
     return (
         // The main container div for the card
         <div className="card">
@@ -10,7 +10,7 @@ const WeatherDetailsCard: React.FC<{ day: string; temp: number; ferenheitSelecte
             <span className="card__temperature">{ferenheitSelected ? temp + '°F' : temp + '°C'}</span>
             
             {/* Weather icon */}
-            <img className="card__icon" src="/src/assets/icons/Group 650.svg" alt="" />
+            <img className="card__icon" src="/src/assets/icons/Group 650.svg" alt="weather icon" />
             
             {/* Day of the week */}
             <span className="card__day">
